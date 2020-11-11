@@ -1,0 +1,221 @@
+#container {
+    /*width:500px !important;*/
+    float: left !important;
+}
+
+.flex-container a:active,
+.flexslider a:active {
+    outline: none;
+}
+
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* FlexSlider Necessary Styles
+*********************************/
+
+.flexslider {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.flexslider .slides>li {
+    display: none;
+}
+
+
+/* Hide the slides before the JS is loaded. Avoids image jumping */
+
+.flexslider .slides img {
+    display: block;
+    width: 101% !important;
+    border: none !important;
+}
+
+.flexslider .slides .slide-image {
+    display: block;
+    /* margin-left: 8px;*/
+    float: left;
+    /*width:241px;*/
+}
+
+.flex-pauseplay span {
+    text-transform: capitalize;
+}
+
+
+/* Clearfix for the .slides element */
+
+.slides:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+html[xmlns] .slides {
+    display: block;
+}
+
+* html .slides {
+    height: 1%;
+}
+
+
+/* No JavaScript Fallback */
+
+
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+
+.no-js .slides>li:first-child {
+    display: block;
+}
+
+
+/* FlexSlider Default Theme
+*********************************/
+
+.flexslider {
+    position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    zoom: 1;
+    margin-top: -18px;
+    float: left;
+}
+
+.flexslider .slides {
+    zoom: 1;
+}
+
+.flexslider .slides>li {
+    position: relative;
+}
+
+
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+
+.flex-container {
+    zoom: 1;
+    position: relative;
+}
+
+.flexslider li img {
+    width: 100% !important;
+}
+
+
+/* Caption style */
+
+
+/* IE rgba() hack */
+
+.flex-caption {
+    background: none;
+    -ms-filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#4C000000, endColorstr=#4C000000);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#4C000000, endColorstr=#4C000000);
+    zoom: 1;
+}
+
+.flex-caption {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    color: #fff;
+    font-size: 18px;
+    left: 0;
+    margin-bottom: 10%;
+    margin-left: 22%;
+    padding: 1%;
+    position: absolute;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid;
+}
+
+.flex-caption2 {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    color: #fff;
+    font-size: 18px;
+    left: 0;
+    margin-bottom: 5%;
+    margin-left: 22%;
+    padding: 1%;
+    position: absolute;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid;
+}
+
+
+/* Direction Nav */
+
+.flex-direction-nav li a {
+    width: 52px;
+    height: 52px;
+    margin: -13px 0 0;
+    display: block;
+    background: url(theme/bg_direction_nav.png) no-repeat 0 0;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+
+.flex-direction-nav li a.disabled {
+    opacity: .3;
+    filter: alpha(opacity=30);
+    cursor: default;
+}
+
+
+/* Control Nav */
+
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+}
+
+.flex-control-nav li {
+    margin: 0 0 0 5px;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+.flex-control-nav li:first-child {
+    margin: 0;
+}
+
+.flex-control-nav li a {
+    width: 18px;
+    height: 18px;
+    display: block;
+    background-color: #10a4e2;
+    border-radius: 50PX;
+    border: 1PX solid #fff;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+
+.flex-control-nav li a:hover {
+    background-position: 0 -13px;
+}
+
+.flex-control-nav li a.active {
+    background-position: 0 -26px;
+    cursor: default;
+    background: #000;
+}

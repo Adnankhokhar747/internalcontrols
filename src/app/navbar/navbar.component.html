@@ -1,0 +1,107 @@
+<div id="saveSuccess"></div>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-atom">
+    <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+<nav class="navbar navbar-expand-lg navebar_color" id="mainNavBar">
+    <div class="container-fluid">
+        <a class="navbar-brand" style="color: #fff;" href="Ifrs16mainpage.html">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link border-top-0" href="index.html" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Scoping <span class="sr-only"></span></a>
+                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item" tabindex="-1" href="#">Map TB with process & SCT</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item" href="#">Perform</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" class="dropdown-item">Upload trail balance</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Review & approve</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item" tabindex="-1" href="#">Process & Sub process Owner</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item" href="#">Perform</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" class="dropdown-item">Upload trail balance</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Review & approve</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="aboutus.html">Process Document<span class="sr-only"></span></a></li>
+                <li class="nav-item"><a class="nav-link" href="contactus.html">Control Design<span class="sr-only"></span></a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Control Testing<span class="sr-only"></span></a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Reports<span class="sr-only"></span></a></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <div class="col-2 nav-item dropdown text-center">
+                    <a class="nav-link  img_nav_bar" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <label [(ngModel)]="name" ngDefaultControl [ngModelOptions]="{standalone: true}">{{ name }} </label>
+                        <img src='/assets/img/thumb.png' alt="img">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <!-- <a class="dropdown-item" routerLink="/login">Log In</a> -->
+                        <a class="dropdown-item" href="javascript:void(0);" (click)="logout()">Log Out</a>
+                        <!-- <a class="dropdown-item" routerLink="/signup">Sign In</a> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+<div id="myModal" class="modall">
+    <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <span class="closee" onclick="$('#myModal').hide();">&times;</span>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="row" id="companyAddUserResponcePanel"></div>
+                    <form>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">UserName</label>
+                            <input type="email" class="form-control" id="exampleInputUserName" name="signUpUserName" [(ngModel)]="signUpUserName" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" name="signUpEmail" [(ngModel)]="signUpEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputcontact">Contact Number</label>
+                            <input type="email" class="form-control" id="exampleInputcontact" name="signUpContact" [(ngModel)]="signUpContact" aria-describedby="emailHelp" placeholder="contact number">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" name="signUpPasword" [(ngModel)]="signUpPassword" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <input type="text" class="form-control" name="signUpCompany" [(ngModel)]="signUpCompany" id="exampleCompany" placeholder="Company">
+
+                        <button type="submit" class="btn btn-primary" (click)="SignUp()">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IFRS 16</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/css/animation.css">
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="/assets/landing/css/aos.css" /> -->
+    <!-- <link href="/assets/landing/css/login.css" rel="stylesheet" /> -->
+</head>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-atom">
+    <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <!--banner-->
+    <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal" onclick="$('#btn-signup').hide(); $('.form-signin').show(); $('.form-signup').hide();">Login</button>
+
+
+    <div id="mySidenav" class="sidenav pulse">
+        <div href="#aboutt" class="animated infinite pulse delay-1s" (click)="trialClick()" onclick="$('.form-signin').hide(); $('.form-signup').show();" data-toggle="modal" data-target="#exampleModal" id="aboutt">signup</div>
+        <!-- <div class="animated infinite pulse delay-1s" (click)="trialLogin()" id="aboutt">Click here for free trial</div> -->
+    </div>
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="max-width: 422px;">
+            <div class="modal-content" style="padding: 0 !important; width: 100% !important;background-color: transparent">
+                <div class="modal-body p-0">
+                    <div id="logreg-forms">
+                        <form class="form-signin" #myForm='ngForm' novalidate>
+                            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+                            <div id="signInResponsePanel"></div>
+                            <!-- <div *ngIf="!validatorSignIn" class="alert alert-danger alert-dismissible " role="alert">
+                                <button type="button" class="close" aria-label="Close" (click)="closeAlert()">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>Please fill all Fields </strong>
+                            </div> -->
+                            <div class="social-login text-center">
+                                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
+                            </div>
+                            <p style="text-align:center"> OR </p>
+                            <input type="email" pattern="/^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" id="inputEmail" class="form-control" placeholder="Email address" name="signUname" required="" autofocus="" [(ngModel)]="signInName">
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="signPass" required="" [(ngModel)]="signInPassword">
+
+                            <button class="btn btn-success btn-block" type="submit" (click)="login()"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+                            <a id="forgot_pswd" onclick="$('#logreg-forms .form-signin').toggle();$('#logreg-forms .form-reset').toggle();">Forgot password?</a>
+                            <hr>
+                            <!-- <p>Don't have an account!</p>  -->
+                            <button class="btn btn-primary btn-block" type="button" id="btn-signup" onclick="$('.Company_login').hide();$('#logreg-forms .form-signup').toggle();$('#logreg-forms .form-signin').toggle();"><i class="fas fa-user-plus"></i> Sign up New Account</button>
+                        </form>
+
+                        <form action="/reset/password/" class="form-reset" #myForm='ngForm'>
+                            <input type="email" pattern="/^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                            <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+                            <a onclick="$('#logreg-forms .form-signin').toggle();$('#logreg-forms .form-reset').toggle();"><i class="fas fa-angle-left"></i> Back</a>
+                        </form>
+
+                        <form action="/signup/" #myForm='ngForm' class="form-signup" novalidate>
+                            <div class="social-login">
+                                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
+                            </div>
+
+                            <p style="text-align:center">OR</p>
+                            <div id="signUpResponsePanel"></div>
+                            <!-- <div *ngIf="!validatorSignUp" class="alert alert-danger alert-dismissible " role="alert">
+                                <button type="button" class="close" aria-label="Close" (click)="closeAlert()">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>Please fill all fields</strong>
+                            </div> -->
+                            <div class="individual_user_checkbox" id="individualCheckBox">
+                                <input type="text" id="user-name" class="form-control" placeholder="User Name / Company Name" name="signUpUserName" required="" autofocus="" [(ngModel)]="signUpUserName">
+                                <span class="error">This field is required</span>
+                                <input type="email" pattern="" id="user-email" class="form-control" name="signUpEmail" [(ngModel)]="signUpEmail" placeholder="Email" required autofocus="">
+                                <input type="text" class="form-control" placeholder="City" name="signUpCity" [(ngModel)]="signUpCity" required autofocus="">
+                                <input type="text" class="form-control" name="signUpAddress" placeholder="Address" [(ngModel)]="signUpAddress">
+                                <input type="text" class="form-control" id="contact_number" name="signUpContact" placeholder="Contact Number" [(ngModel)]="signUpContact">
+                                <input type="password" id="user-pass" class="form-control mt-1" placeholder="Password" name="signUpPassword" [(ngModel)]="signUpPassword" required autofocus="">
+                                <input type="password" id="user-repeatpass" class="form-control mt-1" placeholder="Repeat Password" name="signUpRepeatPassword" required autofocus="" [(ngModel)]="signUpRepeatPassword">
+                                <span id='message'></span>
+                            </div>
+                            <button class="btn btn-primary btn-block" (click)="SignUp()" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+                            <a onclick="$('#logreg-forms .form-signup').toggle();$('#logreg-forms .form-signin').toggle();"><i class="fas fa-angle-left"></i> Back</a>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="payment" tabindex="-1" role="dialog" aria-labelledby="payment" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="max-width: 422px;">
+            <div class="modal-content" style="padding: 0 !important; width: 100% !important;background-color: transparent">
+                <div class="modal-body p-0">
+                    <div class="container payment_card" style="width: 100%;">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="credit-card-box">
+                                    <div class="panel-heading display-table">
+                                        <div class="row display-tr">
+                                            <h3 class="panel-title display-td">Payment Details</h3>
+                                            <div class="display-td">
+                                                <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form role="form" class="payment-form" id="payment-form">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <label for="cardNumber">CARD NUMBER</label>
+                                                        <div class="input-group">
+                                                            <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required autofocus />
+                                                            <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-7 col-md-7">
+                                                    <div class="form-group">
+                                                        <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                                        <input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-5 col-md-5 pull-right">
+                                                    <div class="form-group">
+                                                        <label for="cardCVC">CV CODE</label>
+                                                        <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <label for="couponCode">COUPON CODE</label>
+                                                        <input type="text" class="form-control" name="couponCode" />
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Start Subscription</button>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="display:none;">
+                                                <div class="col-xs-12">
+                                                    <p class="payment-errors"></p>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlaylogin">
+        <div class="cv-spinner">
+            <span class="spinner"></span>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="/assets/landing/js/jquery.min.js"></script>
+<script src="/assets/landing/js/jquery.easing.min.js"></script>
+<script src="/assets/landing/js/bootstrap.min.js"></script>
+<script src="/assets/landing/js/custom.js"></script>
+<script src="/assets/landing/contactform/contactform.js"></script>
+<script src="/assets/landing/js/jquery.steps.js"></script>
+<script src="/assets/landing/vendor/daterangepicker/moment.min.js"></script>
+<script src="/assets/landing/vendor/daterangepicker/daterangepicker.js"></script>
+<script src="/assets/landing/vendor/countdowntime/countdowntime.js"></script>
+<script src="/assets/landing/s/main.js"></script>
+<script>
+</script>
